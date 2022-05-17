@@ -38,7 +38,10 @@ router.get("/posts/:postName", (req, res) => {
   posts.forEach((post) => {
     const storedTitle = _.lowerCase(post.title);
     storedTitle === requestedTitle
-      ? console.log("mutch found")
+      ? res.render("post", {
+          theTitle: storedTitle,
+          thePost: post.content,
+        })
       : console.log("no such of route");
   });
 });
