@@ -23,4 +23,5 @@ const router = express.Router();
 router.get("/", (req, res) => homeContent(req, res, homeStartingContent));
 router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
+router.post("/compose", composePage);
 module.exports = router;
