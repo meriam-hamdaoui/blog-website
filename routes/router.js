@@ -32,9 +32,10 @@ router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
 router.post("/compose", (req, res) => composePost(req, res, posts));
 //routing params challenge 16
+let requestedTitle = "";
 router.get("/posts/:postName", (req, res) => {
   // console.log("typeof", typeof req.params.postName);
-  const requestedTitle = _.lowerCase(req.params.postName);
+  requestedTitle = _.lowerCase(req.params.postName);
   posts.forEach((post) => {
     const storedTitle = _.lowerCase(post.title);
     storedTitle === requestedTitle
@@ -44,5 +45,9 @@ router.get("/posts/:postName", (req, res) => {
         })
       : console.log("no such of route");
   });
+});
+router.post("/posts/:postName", (req, res) => {
+  requestedTitle = _.lowerCase(req.params.postName);
+  res.redirect("/posts/:requestedTitle");
 });
 module.exports = router;
