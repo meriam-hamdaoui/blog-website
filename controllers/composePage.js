@@ -10,7 +10,7 @@ const composePost = (req, res, posts) => {
     content: req.body.postBody,
   };
   posts.push(post);
-  console.log(posts);
+  //   console.log(posts);
   res.redirect("/");
 };
 

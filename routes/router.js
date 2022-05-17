@@ -23,7 +23,9 @@ let posts = [];
 const router = express.Router();
 
 //get methode
-router.get("/", (req, res) => homeContent(req, res, homeStartingContent));
+router.get("/", (req, res) =>
+  homeContent(req, res, homeStartingContent, posts)
+);
 router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
 router.post("/compose", (req, res) => composePost(req, res, posts));

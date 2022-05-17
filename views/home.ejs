@@ -4,4 +4,8 @@
 
 <p><%= homeParagraph %></p>
 
-<%- include("partials/footer") -%>
+<% posts.map(post => { -%>
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<% }) %> <%- include("partials/footer") -%>
