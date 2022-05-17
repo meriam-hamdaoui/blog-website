@@ -5,15 +5,23 @@
   <div class="form-group">
     <label for="label1">Titre</label>
     <input
-      type="email"
+      name="newTitle"
+      type="text"
       class="form-control"
-      id="input"
-      placeholder="blog title"
+      id="formGroupExampleInput"
+      placeholder="new title"
+      autocomplete="off"
     />
   </div>
   <div class="form-group">
     <label for="label2">Post</label>
-    <textarea class="form-control" id="textarea" rows="3"></textarea>
+    <textarea
+      name="newPost"
+      class="form-control"
+      id="textarea"
+      rows="3"
+      autocomplete="off"
+    ></textarea>
   </div>
   <button type="submit" class="btn btn-primary">publish</button>
 </form>
