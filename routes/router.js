@@ -5,7 +5,7 @@ const express = require("express");
 //const { affichage } = require("../controllers/affichage");
 const { homeContent } = require("../controllers/homeContent");
 const { aboutContentFct } = require("../controllers/aboutContent");
-const { composePage } = require("../controllers/composePage");
+const { composePage, composePost } = require("../controllers/composePage");
 
 //pages content
 //const homeStartingContent =
@@ -17,7 +17,7 @@ const {
 } = require("../constants/pagesContent");
 
 //global variable
-var posts = [];
+let posts = [];
 
 //initiate a server route
 const router = express.Router();
@@ -26,5 +26,5 @@ const router = express.Router();
 router.get("/", (req, res) => homeContent(req, res, homeStartingContent));
 router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
-router.post("/compose", (req, res) => composePage(req, res, posts));
+router.post("/compose", (req, res) => composePost(req, res, posts));
 module.exports = router;
