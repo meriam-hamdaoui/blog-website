@@ -1,6 +1,10 @@
 //third-party modules
 const express = require("express");
 
+//lodash requirement
+const _ = require("lodash");
+// console.log(_.lowerCase("AAA"));
+
 //local modules
 //const { affichage } = require("../controllers/affichage");
 const { homeContent } = require("../controllers/homeContent");
@@ -28,11 +32,14 @@ router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
 router.post("/compose", (req, res) => composePost(req, res, posts));
 //routing params challenge 16
-router.get("/posts/:postId", (req, res) => {
-  const id = req.params.postId;
-  // console.log(id);
-  posts.find((post) => post.title === id)
-    ? console.log("match found")
-    : console.log("there's no such route");
+router.get("/posts/:postName", (req, res) => {
+  // console.log("typeof", typeof req.params.postName);
+  const requestedTitle = _.lowerCase(req.params.postName);
+  posts.forEach((post) => {
+    const storedTitle = _.lowerCase(post.title);
+    storedTitle === requestedTitle
+      ? console.log("mutch found")
+      : console.log("no such of route");
+  });
 });
 module.exports = router;
