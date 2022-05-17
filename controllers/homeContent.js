@@ -1,4 +1,4 @@
-const homeContent = (req, res) => {
-  res.render("home");
+const homeContent = (req, res, homeStartingContent) => {
+  res.render("home", { homeParagraph: homeStartingContent });
 };
 module.exports = { homeContent };
