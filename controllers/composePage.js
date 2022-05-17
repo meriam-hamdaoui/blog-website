@@ -1,9 +1,10 @@
 const composePage = (req, res) => {
-  const newTitle = req.body.newTitle;
-  const newPost = req.body.newPost;
+  const post = {
+    postTitle: req.body.postTitle,
+    postBody: req.body.postBody,
+  };
 
-  const newPublish = newTitle + " " + newPost;
-  console.log(newPublish);
+  console.log(post.postTitle + " " + post.postBody);
   res.render("compose");
 };
 
