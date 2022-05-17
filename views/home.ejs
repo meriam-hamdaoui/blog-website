@@ -4,8 +4,6 @@
 
 <p><%= homeParagraph %></p>
 
-<% console.log(postItems) %> <% for (let i = 0; i < postItems.length; i++) { %>
-<% if (postItems.length > 2){ %> <% console.log(postItems[i].title) %> <% }} %>
 <% postItems.map(post => { -%>
 <h1><%= post.title %></h1>
 <p><%= post.content %></p>

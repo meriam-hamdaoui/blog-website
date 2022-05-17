@@ -9,9 +9,12 @@ const composePost = (req, res, posts) => {
     title: req.body.postTitle,
     content: req.body.postBody,
   };
-  posts.push(post);
-  //   console.log(posts);
-  res.redirect("/");
+  if (!post.title && !post.content) {
+    res.send("add a post first");
+  } else {
+    posts.push(post);
+    res.redirect("/");
+  }
 };
 
 module.exports = { composePage, composePost };
