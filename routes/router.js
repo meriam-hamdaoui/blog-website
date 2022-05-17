@@ -16,6 +16,9 @@ const {
   contactContent,
 } = require("../constants/pagesContent");
 
+//global variable
+var posts = [];
+
 //initiate a server route
 const router = express.Router();
 
@@ -23,5 +26,5 @@ const router = express.Router();
 router.get("/", (req, res) => homeContent(req, res, homeStartingContent));
 router.get("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 router.get("/compose", composePage);
-router.post("/compose", composePage);
+router.post("/compose", (req, res) => composePage(req, res, posts));
 module.exports = router;
