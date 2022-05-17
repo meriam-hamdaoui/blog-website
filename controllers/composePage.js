@@ -2,8 +2,6 @@ const composePage = (req, res) => {
   res.render("compose");
 };
 
-// module.exports = { composePage };
-
 const composePost = (req, res, posts) => {
   const post = {
     title: req.body.postTitle,
