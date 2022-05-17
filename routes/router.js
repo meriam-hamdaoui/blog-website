@@ -30,6 +30,9 @@ router.post("/compose", (req, res) => composePost(req, res, posts));
 //routing params challenge 16
 router.get("/posts/:postId", (req, res) => {
   const id = req.params.postId;
-  console.log(id);
+  // console.log(id);
+  posts.find((post) => post.title === id)
+    ? console.log("match found")
+    : console.log("there's no such route");
 });
 module.exports = router;
