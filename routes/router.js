@@ -4,6 +4,7 @@ const express = require("express");
 //local modules
 //const { affichage } = require("../controllers/affichage");
 const { homeContent } = require("../controllers/homeContent");
+const { aboutContentFct } = require("../controllers/aboutContent");
 
 //pages content
 //const homeStartingContent =
@@ -19,5 +20,6 @@ const router = express.Router();
 
 //get methode
 router.get("/", (req, res) => homeContent(req, res, homeStartingContent));
+router.all("/about", (req, res) => aboutContentFct(req, res, aboutContent));
 
 module.exports = router;
