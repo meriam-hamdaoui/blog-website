@@ -1,28 +1,29 @@
 <%- include("partials/header") -%>
-
-<h1>Compose</h1>
-<form action="/compose" method="post">
-  <div class="form-group">
-    <label>Titre</label>
-    <input
-      name="postTitle"
-      type="text"
-      class="form-control"
-      id="formGroupExampleInput"
-      placeholder="new title"
-      autocomplete="off"
-    />
-  </div>
-  <div class="form-group">
-    <label>Post</label>
-    <textarea
-      name="postBody"
-      class="form-control"
-      id="textarea"
-      rows="3"
-      autocomplete="off"
-    ></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">publish</button>
-</form>
+<div class="container-fluid">
+  <h1>Compose</h1>
+  <form action="/compose" method="post">
+    <div class="form-group">
+      <label>Titre</label>
+      <input
+        name="postTitle"
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="new title"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label>Post</label>
+      <textarea
+        name="postBody"
+        class="form-control"
+        id="textarea"
+        rows="3"
+        autocomplete="off"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">publish</button>
+  </form>
+</div>
 <%- include("partials/footer") -%>
